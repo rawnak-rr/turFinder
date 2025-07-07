@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&family=Unbounded:wght@200..900&display=swap');
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'PolySans';
+  src: url('https://maheer-ee.github.io/turFinder/src/assets/fonts/polysanstrial-median.otf') format('opentype');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PolySans';
+  src: url('https://maheer-ee.github.io/turFinder/src/assets/fonts/polysanstrial-bulky.otf') format('opentype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@theme {
+  /* Fonts */
+  --font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-polysans: "PolySans", sans-serif;
+  --font-unbounded: "Unbounded", sans-serif;
+  --font-redhatmono: "Red Hat Mono", monospace;
+
+  /* Colors */
+  --color-*: initial;
+  --color-almostwhite: #FBF9ED;
+  --color-beige: #FCF6CB;
+  --color-almostblack: #262626;
+  --color-yellow: #E6C700;
+  --color-lightgreen: #07EC72;
+  --color-green: #00694B;
+  --color-darkgreen: #014E38;
+}
