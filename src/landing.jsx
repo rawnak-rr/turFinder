@@ -1,6 +1,11 @@
 import "./index.css";
 import NavBar from "./components/NavBar";
 import running from "./assets/runningmen.jpg";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
+
 
 function LandingPage() {
   return (
