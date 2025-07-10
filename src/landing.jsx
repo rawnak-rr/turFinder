@@ -4,7 +4,7 @@ import running from "./assets/runningmen.jpg";
 
 function LandingPage() {
   return (
-    <body className="flex justify-center">
+    <div className="flex justify-center">
       <div>
         <NavBar />
       </div>
@@ -15,7 +15,7 @@ function LandingPage() {
           turFinder*
         </p>
       </div>
-    </body>
+    </div>
   );
 };
 
