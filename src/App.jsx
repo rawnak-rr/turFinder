@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import NavBar from './components/navBar'
+import { useState } from 'react';
+import LandingPage from './landing.jsx';
 
 function App() {
   return (
-    <NavBar/>
-  )
-}
+    <LandingPage />
+  );
+};
 
 export default App
