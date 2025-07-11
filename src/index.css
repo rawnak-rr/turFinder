@@ -3,13 +3,13 @@
 
 @font-face {
   font-family: 'PolySans';
-  src: url('https://maheer-ee.github.io/turFinder/src/assets/fonts/polysanstrial-median.otf') format('opentype');
+  src: url('https://turfinder.github.io/turFinder/src/assets/fonts/polysanstrial-median.otf') format('opentype');
   font-weight: 600;
   font-display: swap;
 }
 @font-face {
   font-family: 'PolySans';
-  src: url('https://maheer-ee.github.io/turFinder/src/assets/fonts/polysanstrial-bulky.otf') format('opentype');
+  src: url('https://turfinder.github.io/turFinder/src/assets/fonts/polysanstrial-bulky.otf') format('opentype');
   font-weight: 700;
   font-display: swap;
 }
