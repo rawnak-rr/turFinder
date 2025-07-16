@@ -9,14 +9,18 @@ gsap.registerPlugin(useGSAP);
 
 function LandingPage() {
   return (
-    <div className="flex justify-center">
-      <div>
+    <div className="flex justify-center w-screen h-screen">
+      <div className="fixed">
         <NavBar />
       </div>
       <div className="flex justify-center items-center">
-        <img src={running} alt="running" className="w-[293px] rounded-[20px] absolute top-[261px]" />
-        <div className="bg-yellow absolute top-[330px] w-[293px] h-[95px]"></div>
-        <p className="absolute top-[314px] pl-[4px] font-helvetica text-[80px] font-bold">
+        <img className="w-70 sm:w-90 lg:w-110 rounded-3xl sm:rounded-4xl lg:rounded-[40px] shrink-0"
+                        src={running} alt="running" />
+        <div className="bg-yellow absolute
+                        w-70 sm:w-90 lg:w-110 
+                        h-23 sm:h-30 lg:h-37"></div>
+        <p className="absolute pl-2.5 
+                      font-helvetica text-[75px] sm:text-[97px] lg:text-[119px] font-bold">
           turFinder*
         </p>
       </div>
