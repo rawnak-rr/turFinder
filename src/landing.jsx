@@ -10,10 +10,10 @@ gsap.registerPlugin(useGSAP);
 function LandingPage() {
   return (
     <div className="flex justify-center w-screen h-screen">
-      <div className="fixed">
+      <div className="fixed z-50">
         <NavBar />
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center z-30">
         <img className="w-70 sm:w-90 lg:w-110 rounded-3xl sm:rounded-4xl lg:rounded-[40px] shrink-0"
                         src={running} alt="running" />
         <div className="bg-yellow absolute
