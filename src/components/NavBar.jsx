@@ -1,7 +1,6 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "../index.css";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import logo from "../assets/turfinderlogo.png";
 import cal from "../assets/calendar.svg";
 import profile from "../assets/profile.svg";
@@ -11,7 +10,9 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [atBottom, setAtBottom] = useState(false);
 
+  // use this to toggle open/close menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     if (isProfileOpen) setIsProfileOpen(false);
@@ -19,7 +20,7 @@ const NavBar = () => {
 
   const handleLogoClick = () => {
     navigate("/");
-    // Close menu if it's open
+    // close menu if it's open
     if (isMenuOpen) {
       setIsMenuOpen(false);
     }
@@ -27,29 +28,51 @@ const NavBar = () => {
       setIsProfileOpen(false);
     }
   };
+
+  // use this to toggle open/close profile
   const toggleProfile = () => {
     setIsProfileOpen(!isProfileOpen);
   };
+
   const handleProfileClick = () => {
     setIsProfileOpen(!isProfileOpen);
     if (isMenuOpen) setIsMenuOpen(false);
   };
+
   const handleLogin = () => {};
 
   const handleMenuItemClick = (path) => {
-    // For now, just console.log since pages don't exist yet
+    // for now, just console.log since pages don't exist yet
     console.log(`Navigating to: ${path}`);
     // navigate(path); // Uncomment when you create these pages
 
     setIsMenuOpen(false); // Close menu
   };
 
+  // this ensures the NavBar properly transitions to the bottom
+  useEffect(() => {
+    const handleScroll = () => {
+      // change  window.scrollY > window.innerHeight / 4 <- as needed
+      if (window.scrollY > window.innerHeight / 4) {
+        setAtBottom(true);
+      } else {
+        setAtBottom(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <div
-        className={`fixed top-0 left-0 w-full h-1/2 bg-darkgreen z-50 rounded-b-2xl transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? "transform translate-y-0" : "transform -translate-y-full"
-        }`}
+        className={`fixed top-0 left-0 w-full h-1/2 bg-darkgreen z-50 rounded-b-2xl transition-transform duration-300 ease-in-out
+          ${
+            isMenuOpen
+              ? "transform translate-y-0"
+              : "transform -translate-y-full"
+          }
+          `}
       >
         <div className="flex h-full justify-center items-center px-8 sm:px-12 md:px-16 lg:px-20">
           {/* Two column layout */}
@@ -237,13 +260,21 @@ const NavBar = () => {
         <div className="fixed inset-0" onClick={toggleProfile}></div>
       )}
 
-      <div className="flex relative z-30">
+      <div
+        className={`flex justify-center fixed top-0 left-0 w-full z-30
+                    transform transition-transform duration-600 ease-in-out
+                    ${
+                      atBottom
+                        ? "translate-y-[calc(100vh-8.5rem)]"
+                        : "translate-y-10"
+                    }
+        `}
+      >
         <div
           className="flex bg-almostblack
-                        mt-10
-                        h-15 sm:h-17.5 lg:h-20
-                        w-61 sm:w-71 lg:w-81
-                        rounded-3xl sm:rounded-[30px] lg:rounded-[36px]"
+                     h-15 sm:h-17.5 lg:h-20
+                     w-61 sm:w-71 lg:w-81
+                     rounded-3xl sm:rounded-[30px] lg:rounded-[36px]"
         >
           <img
             onClick={handleLogoClick}

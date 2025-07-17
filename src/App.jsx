@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LandingPage from './landing.jsx';
+import {useState} from "react";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import HomePage from "./home.jsx";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<HomePage />} />
         {/* Add more routes here as you create new pages */}
         {/* Example: */}
         {/* <Route path="/book" element={<BookingPage />} /> */}
@@ -15,6 +15,6 @@ function App() {
       </Routes>
     </Router>
   );
-};
+}
 
-export default App
+export default App;
