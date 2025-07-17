@@ -1,31 +1,35 @@
 import "./index.css";
 import NavBar from "./components/NavBar";
 import running from "./assets/runningmen.jpg";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
+import {gsap} from "gsap";
+import {useGSAP} from "@gsap/react";
 
 gsap.registerPlugin(useGSAP);
 
-
-function LandingPage() {
+export default function LandingPage() {
   return (
     <div className="flex justify-center w-screen h-screen">
       <div className="fixed z-50">
         <NavBar />
       </div>
       <div className="flex justify-center items-center z-30">
-        <img className="w-70 sm:w-90 lg:w-110 rounded-3xl sm:rounded-4xl lg:rounded-[40px] shrink-0"
-                        src={running} alt="running" />
-        <div className="bg-yellow absolute
+        <img
+          className="w-70 sm:w-90 lg:w-110 rounded-3xl sm:rounded-4xl lg:rounded-[40px] shrink-0"
+          src={running}
+          alt="running"
+        />
+        <div
+          className="bg-yellow absolute
                         w-70 sm:w-90 lg:w-110 
-                        h-23 sm:h-30 lg:h-37"></div>
-        <p className="absolute pl-2.5 
-                      font-helvetica text-[75px] sm:text-[97px] lg:text-[119px] font-bold">
+                        h-23 sm:h-30 lg:h-37"
+        ></div>
+        <p
+          className="absolute pl-2.5 
+                      font-helvetica text-[75px] sm:text-[97px] lg:text-[119px] font-bold"
+        >
           turFinder*
         </p>
       </div>
     </div>
   );
-};
-
-export default LandingPage;
+}
