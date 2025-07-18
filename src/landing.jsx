@@ -1,8 +1,8 @@
 import "./index.css";
 import NavBar from "./components/NavBar";
 import running from "./assets/runningmen.jpg";
-import {gsap} from "gsap";
-import {useGSAP} from "@gsap/react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP);
 
@@ -14,7 +14,7 @@ export default function LandingPage() {
       </div>
       <div className="flex justify-center items-center z-30">
         <img
-          className="w-70 sm:w-90 lg:w-110 rounded-3xl sm:rounded-4xl lg:rounded-[40px] shrink-0"
+          className="w-70 sm:w-90 lg:w-110 rounded-3xl shrink-0"
           src={running}
           alt="running"
         />

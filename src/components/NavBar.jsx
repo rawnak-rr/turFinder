@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "../index.css";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/turfinderlogo.png";
 import cal from "../assets/calendar.svg";
 import profile from "../assets/profile.svg";
@@ -274,7 +274,7 @@ const NavBar = () => {
           className="flex bg-almostblack
                      h-15 sm:h-17.5 lg:h-20
                      w-61 sm:w-71 lg:w-81
-                     rounded-3xl sm:rounded-[30px] lg:rounded-[36px]"
+                     rounded-3xl "
         >
           <img
             onClick={handleLogoClick}
@@ -285,11 +285,11 @@ const NavBar = () => {
           <div
             className="flex font-polysans bg-darkgreen h-100% justify-evenly items-center
                           w-45 sm:w-55 lg:w-65
-                          rounded-3xl sm:rounded-[30px] lg:rounded-[36px]"
+                          rounded-3xl"
           >
             <button
               onClick={toggleMenu}
-              className="flex items-center justify-center rounded-full bg-almostblack cursor-pointer
+              className="flex items-center justify-center rounded-2xl bg-almostblack cursor-pointer
                                font-polysans text-beige text-xs sm:text-sm lg:text-base
                                h-8 sm:h-10 lg:h-12
                                w-19 sm:w-21 lg:w-23
