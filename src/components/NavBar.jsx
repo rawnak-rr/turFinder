@@ -8,12 +8,13 @@ import menu from "../assets/menu.svg";
 import DropdownMenu from "./navcomponents/DropDownMenu";
 import Login from "./navcomponents/Login";
 import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [atBottom, setAtBottom] = useState(false);
+  const navbarRef = useRef(null);
   const logoRef = useRef(null);
 
   // use this to toggle open/close menu
@@ -53,19 +54,23 @@ const NavBar = () => {
     setIsMenuOpen(false); // Close menu
   };
 
-  // this ensures the NavBar properly transitions to the bottom
-  useEffect(() => {
-    const handleScroll = () => {
-      // change  window.scrollY > window.innerHeight / 4 <- as needed
-      if (window.scrollY > window.innerHeight / 4) {
-        setAtBottom(true);
-      } else {
-        setAtBottom(false);
+  useGSAP(() => {
+    gsap.fromTo(
+      navbarRef.current,
+      { y: "6vh", opacity: 1 },
+      {
+        y: "86vh",
+        opacity: 1,
+        duration: 1,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: navbarRef.current,
+          start: "top 40%",
+          toggleActions: "reverse play reverse play",
+        },
       }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    );
+  });
 
   useEffect(() => {
     const spin = () => {
@@ -97,14 +102,8 @@ const NavBar = () => {
       />
       {/* navbar code */}
       <div
-        className={`flex justify-center fixed top-0 left-0 w-full z-30
-                    transform transition-transform duration-600 ease-in-out
-                    ${
-                      atBottom
-                        ? "translate-y-[calc(100vh-8.5rem)]"
-                        : "translate-y-10"
-                    }
-        `}>
+        ref={navbarRef}
+        className="flex justify-center fixed top-0 left-0 w-full z-30">
         <div
           className="flex bg-almostblack
                      h-15 sm:h-17.5 lg:h-20
