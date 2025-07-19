@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../index.css";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/turfinderlogo.png";
@@ -7,12 +7,14 @@ import profile from "../assets/profile.svg";
 import menu from "../assets/menu.svg";
 import DropdownMenu from "./navcomponents/DropDownMenu";
 import Login from "./navcomponents/Login";
+import { gsap } from "gsap";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [atBottom, setAtBottom] = useState(false);
+  const logoRef = useRef(null);
 
   // use this to toggle open/close menu
   const toggleMenu = () => {
@@ -65,6 +67,20 @@ const NavBar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const spin = () => {
+      if (logoRef.current) {
+        gsap.fromTo(
+          logoRef.current,
+          { rotate: 0 },
+          { rotate: 360, duration: 2, ease: "power2.inOut" }
+        );
+      }
+    };
+    const interval = setInterval(spin, 5000); // spin every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       {/* drop down menu from the top */}
@@ -95,6 +111,7 @@ const NavBar = () => {
                      w-61 sm:w-71 lg:w-81
                      rounded-3xl ">
           <img
+            ref={logoRef}
             onClick={handleLogoClick}
             src={logo}
             alt="tflogo"
