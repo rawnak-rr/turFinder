@@ -5,8 +5,8 @@ import logo from "../assets/turfinderlogo.png";
 import cal from "../assets/calendar.svg";
 import profile from "../assets/profile.svg";
 import menu from "../assets/menu.svg";
-import DropdownMenu from "./navbar/DropDownMenu";
-import Login from "./navbar/Login";
+import DropdownMenu from "./navcomponents/DropDownMenu";
+import Login from "./navcomponents/Login";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -88,14 +88,12 @@ const NavBar = () => {
                         ? "translate-y-[calc(100vh-8.5rem)]"
                         : "translate-y-10"
                     }
-        `}
-      >
+        `}>
         <div
           className="flex bg-almostblack
                      h-15 sm:h-17.5 lg:h-20
                      w-61 sm:w-71 lg:w-81
-                     rounded-3xl "
-        >
+                     rounded-3xl ">
           <img
             onClick={handleLogoClick}
             src={logo}
@@ -105,16 +103,14 @@ const NavBar = () => {
           <div
             className="flex font-polysans bg-darkgreen h-100% justify-evenly items-center
                           w-45 sm:w-55 lg:w-65
-                          rounded-3xl"
-          >
+                          rounded-3xl">
             <button
               onClick={toggleMenu}
               className="flex items-center justify-center rounded-2xl bg-almostblack cursor-pointer
                                font-polysans text-beige text-xs sm:text-sm lg:text-base
                                h-8 sm:h-10 lg:h-12
                                w-19 sm:w-21 lg:w-23
-                               hover:bg-green active:bg-green/55 transition-all duration-200"
-            >
+                               hover:bg-green active:bg-green/55 transition-all duration-200">
               Menu
               <img
                 src={menu}
@@ -127,17 +123,19 @@ const NavBar = () => {
                                h-8 sm:h-10 lg:h-12
                                w-8 sm:w-10 lg:w-12
                                rounded-lg sm:rounded-xl lg:rounded-2xl
-                               hover:bg-green active:bg-green/55 transition-all duration-200"
-            >
-              <img src={cal} alt="calendar" className="h-5 sm:h-6 lg:h-7" />
+                               hover:bg-green active:bg-green/55 transition-all duration-200">
+              <img
+                src={cal}
+                alt="calendar"
+                className="h-5 sm:h-6 lg:h-7"
+              />
             </button>
             <button
               className="flex bg-almostblack items-center justify-center cursor-pointer
                                h-8 sm:h-10 lg:h-12
                                w-8 sm:w-10 lg:w-12
                                rounded-lg sm:rounded-xl lg:rounded-2xl
-                               hover:bg-green active:bg-green/55 transition-all duration-200"
-            >
+                               hover:bg-green active:bg-green/55 transition-all duration-200">
               <img
                 onClick={handleProfileClick}
                 src={profile}
