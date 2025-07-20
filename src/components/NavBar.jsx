@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../index.css";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/turfinderlogo.png";
@@ -9,8 +9,11 @@ import DropdownMenu from "./navcomponents/DropDownMenu";
 import Login from "./navcomponents/Login";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-const NavBar = () => {
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -164,6 +167,4 @@ const NavBar = () => {
       </div>
     </>
   );
-};
-
-export default NavBar;
+}
