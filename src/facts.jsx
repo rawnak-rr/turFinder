@@ -1,0 +1,220 @@
+import "./index.css";
+import pitch from "./assets/footballpitch.png";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+export default function FactsPage() {
+  const firstCardRef = useRef(null);
+  const secondCardRef = useRef(null);
+  const thirdCardRef = useRef(null);
+  const fourthCardRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add(
+      {
+        // Mobile: max-width 1023px (Tailwind's lg breakpoint)
+        isMobile: "(max-width: 1023px)",
+        // Desktop: min-width 1024px
+        isDesktop: "(min-width: 1024px)",
+      },
+      (context) => {
+        let { isMobile, isDesktop } = context.conditions;
+
+        if (isMobile) {
+          // Animate vertically for mobile
+          gsap.fromTo(
+            firstCardRef.current,
+            { y: "6vh", opacity: 1 },
+            {
+              y: "-vh",
+              opacity: 1,
+              duration: 1,
+              ease: "power2.inOut",
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 20%",
+                toggleActions: "play reverse play reverse",
+              },
+            }
+          );
+          gsap.fromTo(
+            secondCardRef.current,
+            { y: "-8vh", opacity: 1 },
+            {
+              y: "vh",
+              opacity: 1,
+              duration: 1,
+              ease: "power2.inOut",
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 20%",
+                toggleActions: "play reverse play reverse",
+              },
+            }
+          );
+          gsap.fromTo(
+            thirdCardRef.current,
+            { y: "-19vh", opacity: 1 },
+            {
+              y: "-vh",
+              opacity: 1,
+              duration: 1,
+              ease: "power2.inOut",
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 20%",
+                toggleActions: "play reverse play reverse",
+              },
+            }
+          );
+          gsap.fromTo(
+            fourthCardRef.current,
+            { y: "-33vh", opacity: 1 },
+            {
+              y: "vh",
+              opacity: 1,
+              duration: 1,
+              ease: "power2.inOut",
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 20%",
+                toggleActions: "play reverse play reverse",
+              },
+            }
+          );
+        }
+
+        if (isDesktop) {
+          // Animate horizontally for desktop
+          gsap.fromTo(
+            firstCardRef.current,
+            { y: "6vh", opacity: 1 },
+            {
+              y: "-vh",
+              opacity: 1,
+              duration: 1,
+              ease: "power2.inOut",
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 20%",
+                toggleActions: "play reverse play reverse",
+              },
+            }
+          );
+          gsap.fromTo(
+            secondCardRef.current,
+            { y: "-8vh", opacity: 1 },
+            {
+              y: "vh",
+              opacity: 1,
+              duration: 1,
+              ease: "power2.inOut",
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 20%",
+                toggleActions: "play reverse play reverse",
+              },
+            }
+          );
+          gsap.fromTo(
+            thirdCardRef.current,
+            { y: "-19vh", opacity: 1 },
+            {
+              y: "-vh",
+              opacity: 1,
+              duration: 1,
+              ease: "power2.inOut",
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 20%",
+                toggleActions: "play reverse play reverse",
+              },
+            }
+          );
+          gsap.fromTo(
+            fourthCardRef.current,
+            { y: "-33vh", opacity: 1 },
+            {
+              y: "vh",
+              opacity: 1,
+              duration: 1,
+              ease: "power2.inOut",
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 20%",
+                toggleActions: "play reverse play reverse",
+              },
+            }
+          );
+        }
+      }
+    );
+
+    return () => mm.revert();
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      className="flex flex-col items-center justify-center w-screen h-screen">
+      <div className="flex flex-col  items-center text-center">
+        <img
+          src={pitch}
+          className="w-45"
+        />
+        <h1 className="flex flex-col font-unbounded font-black text-2xl">
+          <span className="mt-5 -mb-1">PLAY WITHOUT ANY</span>
+          <span>HASSLE!</span>
+        </h1>
+        <p className="flex flex-col font-redhatmono font-normal text-baseline">
+          <span className="mt-4 -mb-1">
+            We help you to book your turf of choice and
+          </span>
+          <span>
+            even organize players if you need! <strong>AND</strong> If
+          </span>
+          <span className="-mt-1 mb-5">
+            you don’t have a group yet, look no further!
+          </span>
+        </p>
+      </div>
+      <div>
+        <div
+          ref={firstCardRef}
+          className="bg-yellow w-56 h-51 rounded-3xl flex flex-col -mb-20 p-6 -rotate-10
+                       font-unbounded font-black text-4xl">
+          <span>20+</span>
+          <span>Fields</span>
+        </div>
+        <div
+          ref={secondCardRef}
+          className="bg-lightgreen w-56 h-51 rounded-3xl flex flex-col -mb-24 p-6 rotate-6
+                       font-unbounded font-black text-4xl">
+          <span>Under</span>
+          <span>2 Mins</span>
+        </div>
+        <div
+          ref={thirdCardRef}
+          className="bg-darkgreen w-56 h-51 rounded-3xl flex flex-col -mb-20 p-6 rotate-13
+                       font-unbounded font-black text-4xl text-beige">
+          <span>500+</span>
+          <span>Players</span>
+        </div>
+        <div
+          ref={fourthCardRef}
+          className="bg-almostblack w-56 h-51 rounded-3xl flex flex-col p-6 -rotate-4
+                       font-unbounded font-black text-4xl text-beige">
+          <span>100%</span>
+          <span>Verified</span>
+        </div>
+      </div>
+    </div>
+  );
+}
