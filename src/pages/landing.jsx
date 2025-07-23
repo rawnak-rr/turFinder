@@ -1,6 +1,6 @@
-import "./index.css";
-import NavBar from "./components/NavBar";
-import running from "./assets/runningmen.jpg";
+import "../index.css";
+import NavBar from "../components/NavBar";
+import running from "../assets/runningmen.jpg";
 
 export default function LandingPage() {
   return (

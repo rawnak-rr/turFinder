@@ -37,6 +37,10 @@ export default function NavBar() {
     }
   };
 
+  const handleCalendar = () => {
+    setIsCalenderOpen(true);
+  };
+
   // use this to toggle open/close profile
   const toggleProfile = () => {
     setIsProfileOpen(!isProfileOpen);

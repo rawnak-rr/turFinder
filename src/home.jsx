@@ -1,6 +1,6 @@
-import FactsPage from "./facts";
-import FinderPage from "./finder";
-import LandingPage from "./landing";
+import FactsPage from "./pages/facts";
+import FinderPage from "./pages/finder";
+import LandingPage from "./pages/landing";
 
 export default function HomePage() {
   return (

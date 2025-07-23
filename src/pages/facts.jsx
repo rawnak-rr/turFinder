@@ -1,5 +1,5 @@
-import "./index.css";
-import pitch from "./assets/footballpitch.png";
+import "../index.css";
+import pitch from "../assets/footballpitch.png";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -95,9 +95,17 @@ export default function FactsPage() {
           // Animate horizontally for desktop
           gsap.fromTo(
             firstCardRef.current,
-            { y: "6vh", opacity: 1 },
             {
-              y: "-vh",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              xPercent: -50,
+              yPercent: -50,
+              opacity: 1,
+            },
+            {
+              x: "-25vw",
+              y: "-25vh",
               opacity: 1,
               duration: 1,
               ease: "power2.inOut",
@@ -110,9 +118,17 @@ export default function FactsPage() {
           );
           gsap.fromTo(
             secondCardRef.current,
-            { y: "-8vh", opacity: 1 },
             {
-              y: "vh",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              xPercent: -50,
+              yPercent: -50,
+              opacity: 1,
+            },
+            {
+              x: "-25vw",
+              y: "25vh",
               opacity: 1,
               duration: 1,
               ease: "power2.inOut",
@@ -125,9 +141,17 @@ export default function FactsPage() {
           );
           gsap.fromTo(
             thirdCardRef.current,
-            { y: "-19vh", opacity: 1 },
             {
-              y: "-vh",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              xPercent: -50,
+              yPercent: -50,
+              opacity: 1,
+            },
+            {
+              x: "25vw",
+              y: "-25vh",
               opacity: 1,
               duration: 1,
               ease: "power2.inOut",
@@ -140,9 +164,17 @@ export default function FactsPage() {
           );
           gsap.fromTo(
             fourthCardRef.current,
-            { y: "-33vh", opacity: 1 },
             {
-              y: "vh",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              xPercent: -50,
+              yPercent: -50,
+              opacity: 1,
+            },
+            {
+              x: "25vw",
+              y: "25vh",
               opacity: 1,
               duration: 1,
               ease: "power2.inOut",
@@ -163,7 +195,7 @@ export default function FactsPage() {
   return (
     <div
       ref={containerRef}
-      className="flex flex-col items-center justify-center w-screen h-screen">
+      className="flex flex-col relative items-center justify-center w-screen h-screen">
       <div className="flex flex-col  items-center text-center">
         <img
           src={pitch}
@@ -189,28 +221,28 @@ export default function FactsPage() {
         <div
           ref={firstCardRef}
           className="bg-yellow w-56 h-51 rounded-3xl flex flex-col -mb-20 p-6 -rotate-10
-                       font-unbounded font-black text-4xl">
+                       font-unbounded font-black text-4xl lg:relative lg:z-30">
           <span>20+</span>
           <span>Fields</span>
         </div>
         <div
           ref={secondCardRef}
           className="bg-lightgreen w-56 h-51 rounded-3xl flex flex-col -mb-24 p-6 rotate-6
-                       font-unbounded font-black text-4xl">
+                       font-unbounded font-black text-4xl lg:relative lg:z-29">
           <span>Under</span>
           <span>2 Mins</span>
         </div>
         <div
           ref={thirdCardRef}
           className="bg-darkgreen w-56 h-51 rounded-3xl flex flex-col -mb-20 p-6 rotate-13
-                       font-unbounded font-black text-4xl text-beige">
+                       font-unbounded font-black text-4xl text-beige lg:relative lg:z-28">
           <span>500+</span>
           <span>Players</span>
         </div>
         <div
           ref={fourthCardRef}
           className="bg-almostblack w-56 h-51 rounded-3xl flex flex-col p-6 -rotate-4
-                       font-unbounded font-black text-4xl text-beige">
+                       font-unbounded font-black text-4xl text-beige lg:relative lg:z-27">
           <span>100%</span>
           <span>Verified</span>
         </div>
