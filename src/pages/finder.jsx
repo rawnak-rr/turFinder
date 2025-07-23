@@ -1,6 +1,6 @@
-import "./index.css";
-import gameFind from "./assets/gameFind.jpg";
-import turFind from "./assets/turFind.jpg";
+import "../index.css";
+import gameFind from "../assets/gameFind.jpg";
+import turFind from "../assets/turFind.jpg";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
