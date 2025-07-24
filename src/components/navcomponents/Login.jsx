@@ -111,7 +111,8 @@ const Login = ({ isProfileOpen, toggleProfile, handleLogin }) => {
 
       {isProfileOpen && (
         <div
-          className="fixed inset-0"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-10 
+          transition-all duration-500 ease-in-out"
           onClick={toggleProfile}></div>
       )}
     </>

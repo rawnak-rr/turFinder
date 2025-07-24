@@ -60,24 +60,41 @@ export default function NavBar() {
 
     setIsMenuOpen(false); // Close menu
   };
-
   useGSAP(() => {
-    gsap.fromTo(
-      navbarRef.current,
-      { y: "6vh", opacity: 1 },
+    const mm = gsap.matchMedia();
+
+    mm.add(
       {
-        y: "86vh",
-        opacity: 1,
-        duration: 1,
-        ease: "power1.inOut",
-        scrollTrigger: {
-          trigger: navbarRef.current,
-          start: "top 40%",
-          toggleActions: "reverse play reverse play",
-        },
+        isMobile: "(max-width: 1023px)",
+        isDesktop: "(min-width: 1024px)",
+      },
+      (context) => {
+        const { isMobile } = context.conditions;
+
+        if (isMobile) {
+          gsap.fromTo(
+            navbarRef.current,
+            { y: "6vh", opacity: 1 },
+            {
+              y: "86vh",
+              opacity: 1,
+              duration: 1,
+              ease: "power1.inOut",
+              scrollTrigger: {
+                trigger: navbarRef.current,
+                start: "top 40%",
+                toggleActions: "reverse play reverse play",
+              },
+            }
+          );
+        } else {
+          gsap.set(navbarRef.current, { clearProps: "transform" });
+        }
       }
     );
-  });
+
+    return () => mm.revert(); // clean‑up on resize/unmount
+  }, []);
 
   useEffect(() => {
     const spin = () => {
@@ -113,9 +130,9 @@ export default function NavBar() {
         className="flex justify-center fixed top-0 left-0 w-full z-30">
         <div
           className="flex bg-almostblack
-                     h-15 sm:h-17.5 lg:h-20
+                     h-15 sm:h-17.5 lg:h-18
                      w-61 sm:w-71 lg:w-81
-                     rounded-3xl ">
+                     rounded-3xl lg:rounded-t-none lg:rounded-b-3xl">
           <img
             ref={logoRef}
             onClick={handleLogoClick}
@@ -126,7 +143,7 @@ export default function NavBar() {
           <div
             className="flex font-polysans bg-darkgreen h-100% justify-evenly items-center
                           w-45 sm:w-55 lg:w-65
-                          rounded-3xl">
+                          rounded-3xl lg:rounded-t-none lg:rounded-b-3xl">
             <button
               onClick={toggleMenu}
               className="flex items-center justify-center rounded-2xl bg-almostblack cursor-pointer
