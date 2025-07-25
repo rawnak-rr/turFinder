@@ -10,6 +10,7 @@ import Login from "./navcomponents/Login";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import CommandSearch from "./CommandSearch";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -124,6 +125,7 @@ export default function NavBar() {
         toggleProfile={toggleProfile}
         handleLogin={handleLogin}
       />
+      <CommandSearch />
       {/* navbar code */}
       <div
         ref={navbarRef}

@@ -4,11 +4,14 @@ const Login = ({ isProfileOpen, toggleProfile, handleLogin }) => {
   return (
     <>
       <div
-        className={`fixed top-0 right-0 h-1/2 w-1/2 sm:w-96 bg-yellow rounded-l-2xl z-50 shadow-2xl transition-transform duration-300 ease-in-out ${
-          isProfileOpen
-            ? "transform translate-x-0"
-            : "transform translate-x-full"
-        }`}>
+        className={`fixed top-0 right-0 h-1/2 
+          w-11/12 max-w-md sm:w-96 bg-yellow/90
+           rounded-l-2xl z-50 transition-all backdrop-blur-md
+           duration-300 ease-in-out ${
+             isProfileOpen
+               ? "transform translate-x-0"
+               : "transform translate-x-full"
+           }`}>
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="flex justify-end items-center p-6">
