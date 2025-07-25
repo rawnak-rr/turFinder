@@ -79,7 +79,7 @@ export default function NavBar() {
               y: "86vh",
               opacity: 1,
               duration: 1,
-              ease: "power1.inOut",
+              ease: "power2.inOut",
               scrollTrigger: {
                 trigger: navbarRef.current,
                 start: "top 40%",
@@ -106,6 +106,7 @@ export default function NavBar() {
         );
       }
     };
+    spin();
     const interval = setInterval(spin, 5000); // spin every 5 seconds
     return () => clearInterval(interval);
   }, []);
