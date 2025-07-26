@@ -8,11 +8,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function FactsPage() {
-  const firstCardRef = useRef(null);
-  const secondCardRef = useRef(null);
-  const thirdCardRef = useRef(null);
-  const fourthCardRef = useRef(null);
-  const containerRef = useRef(null);
+  const firstCardRef = useRef<HTMLDivElement | null>(null);
+  const secondCardRef = useRef<HTMLDivElement | null>(null);
+  const thirdCardRef = useRef<HTMLDivElement | null>(null);
+  const fourthCardRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -25,9 +25,7 @@ export default function FactsPage() {
         isDesktop: "(min-width: 1024px)",
       },
       (context) => {
-        let { isMobile, isDesktop } = context.conditions;
-
-        if (isMobile) {
+        if (context.conditions?.isMobile) {
           // Animate vertically for mobile
           gsap.fromTo(
             firstCardRef.current,
@@ -91,7 +89,7 @@ export default function FactsPage() {
           );
         }
 
-        if (isDesktop) {
+        if (context.conditions?.isDesktop) {
           // Animate horizontally for desktop
           gsap.fromTo(
             firstCardRef.current,

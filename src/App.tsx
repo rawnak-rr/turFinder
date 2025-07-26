@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./home.jsx";
+import HomePage from "./home";
 
-function App() {
+export default function App() {
   return (
     <Router>
       <Routes>
@@ -19,5 +18,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;

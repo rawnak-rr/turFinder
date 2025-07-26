@@ -15,19 +15,19 @@ import CommandSearch from "./CommandSearch";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function NavBar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const navigate = useNavigate();
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const navbarRef = useRef(null);
-  const logoRef = useRef(null);
+  const [isProfileOpen, setIsProfileOpen] = useState<boolean>(false);
+  const navbarRef = useRef<HTMLDivElement | null>(null);
+  const logoRef = useRef<HTMLImageElement | null>(null);
 
   // use this to toggle open/close menu
-  const toggleMenu = () => {
+  const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen);
     if (isProfileOpen) setIsProfileOpen(false);
   };
 
-  const handleLogoClick = () => {
+  const handleLogoClick = (): void => {
     navigate("/");
     // close menu if it's open
     if (isMenuOpen) {
@@ -38,23 +38,19 @@ export default function NavBar() {
     }
   };
 
-  const handleCalendar = () => {
-    setIsCalenderOpen(true);
-  };
-
   // use this to toggle open/close profile
-  const toggleProfile = () => {
+  const toggleProfile = (): void => {
     setIsProfileOpen(!isProfileOpen);
   };
 
-  const handleProfileClick = () => {
+  const handleProfileClick = (): void => {
     setIsProfileOpen(!isProfileOpen);
     if (isMenuOpen) setIsMenuOpen(false);
   };
 
-  const handleLogin = () => {};
+  const handleLogin = (): void => {};
 
-  const handleMenuItemClick = (path) => {
+  const handleMenuItemClick = (path: string): void => {
     // for now, just console.log since pages don't exist yet
     console.log(`Navigating to: ${path}`);
     // navigate(path); // Uncomment when you create these pages
@@ -70,9 +66,7 @@ export default function NavBar() {
         isDesktop: "(min-width: 1024px)",
       },
       (context) => {
-        const { isMobile } = context.conditions;
-
-        if (isMobile) {
+        if (context.conditions?.isMobile) {
           gsap.fromTo(
             navbarRef.current,
             { y: "6vh", opacity: 1 },

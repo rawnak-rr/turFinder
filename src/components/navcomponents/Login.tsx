@@ -1,4 +1,14 @@
-export default function Login({ isProfileOpen, toggleProfile, handleLogin }) {
+interface LoginProps {
+  isProfileOpen: boolean;
+  toggleProfile: () => void;
+  handleLogin: () => void;
+}
+
+export default function Login({
+  isProfileOpen,
+  toggleProfile,
+  handleLogin,
+}: LoginProps) {
   return (
     <>
       <div
@@ -63,7 +73,7 @@ export default function Login({ isProfileOpen, toggleProfile, handleLogin }) {
               </div>
 
               {/* login with google */}
-              <button className="w-full py-3 px-4 border rounded-lg hover:bg-gray-50 transition-colors font-medium flex items-center justify-center space-x-2">
+              <button className="w-full py-3 px-4 border rounded-lg hover:bg-gray-50 transition-colors font-medium flex items-center justify-center space-x-2 cursor-pointer">
                 <svg
                   className="w-5 h-5"
                   viewBox="0 0 24 24">

@@ -9,9 +9,9 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function FinderPage() {
-  const leftCardRef = useRef(null);
-  const rightCardRef = useRef(null);
-  const containerRef = useRef(null);
+  const leftCardRef = useRef<HTMLDivElement | null>(null);
+  const rightCardRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -24,9 +24,7 @@ export default function FinderPage() {
         isDesktop: "(min-width: 1024px)",
       },
       (context) => {
-        let { isMobile, isDesktop } = context.conditions;
-
-        if (isMobile) {
+        if (context.conditions?.isMobile) {
           // Animate vertically for mobile
           gsap.fromTo(
             leftCardRef.current,
@@ -62,7 +60,7 @@ export default function FinderPage() {
           );
         }
 
-        if (isDesktop) {
+        if (context.conditions?.isDesktop) {
           // Animate horizontally for desktop
           gsap.fromTo(
             leftCardRef.current,
