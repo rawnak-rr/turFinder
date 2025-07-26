@@ -220,31 +220,56 @@ export default function FactsPage() {
       <div>
         <div
           ref={firstCardRef}
-          className="bg-yellow w-56 h-51 rounded-3xl flex flex-col -mb-20 p-6 -rotate-10
-                       font-unbounded font-black text-4xl lg:relative lg:z-30">
-          <span>20+</span>
-          <span>Fields</span>
+          className="bg-yellow w-56 h-51 rounded-3xl flex flex-col justify-between -mb-20 p-6 -rotate-10
+                       font-unbounded font-black text-4xl
+                       lg:relative lg:z-30">
+          <div className="flex flex-col">
+            <span>20+</span>
+            <span>Fields</span>
+          </div>
+          <p className="font-redhatmono text-[11px] font-normal">
+            Turf locations across Bangladesh — discover and book with ease.
+          </p>
         </div>
         <div
           ref={secondCardRef}
-          className="bg-lightgreen w-56 h-51 rounded-3xl flex flex-col -mb-24 p-6 rotate-6
-                       font-unbounded font-black text-4xl lg:relative lg:z-29">
-          <span>Under</span>
-          <span>2 Mins</span>
+          className="bg-lightgreen w-56 h-51 rounded-3xl flex flex-col justify-between -mb-24 p-6 rotate-6
+                       font-unbounded font-black text-4xl
+                       lg:relative lg:z-29">
+          <div className="flex flex-col">
+            <span>Under</span>
+            <span>2 Mins</span>
+          </div>
+          <p className="font-redhatmono text-[11px] font-normal">
+            Average time to find & reserve a turf near you.
+          </p>
         </div>
         <div
           ref={thirdCardRef}
-          className="bg-darkgreen w-56 h-51 rounded-3xl flex flex-col -mb-20 p-6 rotate-13
-                       font-unbounded font-black text-4xl text-beige lg:relative lg:z-28">
-          <span>500+</span>
-          <span>Players</span>
+          className="bg-darkgreen w-56 h-51 rounded-3xl flex flex-col justify-between -mb-20 p-6 rotate-13
+                       font-unbounded font-black text-4xl text-beige
+                       lg:relative lg:z-28">
+          <div className="flex flex-col">
+            <span>500+</span>
+            <span>Players</span>
+          </div>
+          <p className="font-redhatmono text-[11px] font-normal">
+            Join solo or with friends — find games that need you.
+          </p>
         </div>
         <div
           ref={fourthCardRef}
-          className="bg-almostblack w-56 h-51 rounded-3xl flex flex-col p-6 -rotate-4
-                       font-unbounded font-black text-4xl text-beige lg:relative lg:z-27">
-          <span>100%</span>
-          <span>Verified</span>
+          className="bg-almostblack w-56 h-51 rounded-3xl flex flex-col justify-between p-6 -rotate-4
+                       font-unbounded font-black text-4xl text-beige
+                       lg:relative lg:z-27">
+          <div className="flex flex-col">
+            <span>100%</span>
+            <span>Verified</span>
+          </div>
+          <p className="font-redhatmono text-[11px] font-normal">
+            We help create games daily by matching verified and legit players,
+            even last-minute.
+          </p>
         </div>
       </div>
     </div>

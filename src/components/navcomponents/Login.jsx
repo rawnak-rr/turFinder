@@ -1,6 +1,4 @@
-import React from "react";
-
-const Login = ({ isProfileOpen, toggleProfile, handleLogin }) => {
+export default function Login({ isProfileOpen, toggleProfile, handleLogin }) {
   return (
     <>
       <div
@@ -13,7 +11,7 @@ const Login = ({ isProfileOpen, toggleProfile, handleLogin }) => {
                : "transform translate-x-full"
            }`}>
         <div className="flex flex-col h-full">
-          {/* Header */}
+          {/* header */}
           <div className="flex justify-end items-center p-6">
             <button
               onClick={toggleProfile}
@@ -22,10 +20,10 @@ const Login = ({ isProfileOpen, toggleProfile, handleLogin }) => {
             </button>
           </div>
 
-          {/* Login Form */}
+          {/* login form */}
           <div className="flex-1 overflow-y-auto p-6 font-redhatmono">
             <div className="space-y-6">
-              {/* Email Input */}
+              {/* email input */}
               <div>
                 <label
                   htmlFor="email"
@@ -40,7 +38,7 @@ const Login = ({ isProfileOpen, toggleProfile, handleLogin }) => {
                 />
               </div>
 
-              {/* Password Input */}
+              {/* password input */}
               <div>
                 <label
                   htmlFor="password"
@@ -55,7 +53,7 @@ const Login = ({ isProfileOpen, toggleProfile, handleLogin }) => {
                 />
               </div>
 
-              {/* Login Button */}
+              {/* login button */}
               <div className="flex justify-center">
                 <button
                   onClick={handleLogin}
@@ -64,7 +62,7 @@ const Login = ({ isProfileOpen, toggleProfile, handleLogin }) => {
                 </button>
               </div>
 
-              {/* Login with Google */}
+              {/* login with google */}
               <button className="w-full py-3 px-4 border rounded-lg hover:bg-gray-50 transition-colors font-medium flex items-center justify-center space-x-2">
                 <svg
                   className="w-5 h-5"
@@ -89,7 +87,7 @@ const Login = ({ isProfileOpen, toggleProfile, handleLogin }) => {
                 <span className="text-gray-700">Login with Google</span>
               </button>
 
-              {/* Forgot Password Link */}
+              {/* forgot password link */}
               <div className="text-center">
                 <a
                   href="#"
@@ -98,7 +96,7 @@ const Login = ({ isProfileOpen, toggleProfile, handleLogin }) => {
                 </a>
               </div>
 
-              {/* Sign Up Link */}
+              {/* sign up link */}
               <div className="text-center text-sm text-gray-600">
                 Don't have an account?{" "}
                 <a
@@ -120,6 +118,4 @@ const Login = ({ isProfileOpen, toggleProfile, handleLogin }) => {
       )}
     </>
   );
-};
-
-export default Login;
+}
