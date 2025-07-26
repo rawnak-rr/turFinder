@@ -145,15 +145,15 @@ export default function NavBar() {
           />
           <div
             className="flex font-polysans bg-darkgreen h-100% justify-evenly items-center
-                          w-45 sm:w-55 lg:w-65
-                          rounded-3xl lg:rounded-t-none lg:rounded-b-3xl">
+                       w-45 sm:w-55 lg:w-65
+                       rounded-3xl lg:rounded-t-none lg:rounded-b-3xl">
             <button
               onClick={toggleMenu}
               className="flex items-center justify-center rounded-2xl bg-almostblack cursor-pointer
-                               font-polysans text-beige text-xs sm:text-sm lg:text-base
-                               h-8 sm:h-10 lg:h-12
-                               w-19 sm:w-21 lg:w-23
-                               hover:bg-green active:bg-green/55 transition-all duration-200">
+                         font-polysans text-beige text-xs sm:text-sm lg:text-base
+                         h-8 sm:h-10 lg:h-12
+                         w-19 sm:w-21 lg:w-23
+                         hover:bg-green active:bg-green/55 transition-all duration-200">
               Menu
               <img
                 src={menu}
@@ -163,10 +163,10 @@ export default function NavBar() {
             </button>
             <button
               className="flex bg-almostblack items-center justify-center cursor-pointer
-                               h-8 sm:h-10 lg:h-12
-                               w-8 sm:w-10 lg:w-12
-                               rounded-lg sm:rounded-xl lg:rounded-2xl
-                               hover:bg-green active:bg-green/55 transition-all duration-200">
+                         h-8 sm:h-10 lg:h-12
+                         w-8 sm:w-10 lg:w-12
+                         rounded-lg sm:rounded-xl lg:rounded-2xl
+                         hover:bg-green active:bg-green/55 transition-all duration-200">
               <img
                 src={cal}
                 alt="calendar"
@@ -175,10 +175,10 @@ export default function NavBar() {
             </button>
             <button
               className="flex bg-almostblack items-center justify-center cursor-pointer
-                               h-8 sm:h-10 lg:h-12
-                               w-8 sm:w-10 lg:w-12
-                               rounded-lg sm:rounded-xl lg:rounded-2xl
-                               hover:bg-green active:bg-green/55 transition-all duration-200">
+                         h-8 sm:h-10 lg:h-12
+                         w-8 sm:w-10 lg:w-12
+                         rounded-lg sm:rounded-xl lg:rounded-2xl
+                         hover:bg-green active:bg-green/55 transition-all duration-200">
               <img
                 onClick={handleProfileClick}
                 src={profile}
