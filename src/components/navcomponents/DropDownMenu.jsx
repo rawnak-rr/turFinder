@@ -3,6 +3,9 @@ export default function DropdownMenu({
   toggleMenu,
   handleMenuItemClick,
 }) {
+  const liStyles =
+    "text-beige font-redhatmono text-lg hover:text-yellow cursor-pointer duration-200";
+
   return (
     <>
       <div
@@ -14,22 +17,22 @@ export default function DropdownMenu({
         <ul className="flex flex-col items-center gap-4">
           <li
             onClick={() => handleMenuItemClick("/book")}
-            className="text-beige font-redhatmono text-lg hover:text-yellow cursor-pointer duration-200">
+            className={liStyles}>
             book your turf
           </li>
           <li
             onClick={() => handleMenuItemClick("/games")}
-            className="text-beige font-redhatmono text-lg hover:text-yellow cursor-pointer duration-200">
+            className={liStyles}>
             looking for games
           </li>
           <li
             onClick={() => handleMenuItemClick("/rating")}
-            className="text-beige font-redhatmono text-lg hover:text-yellow cursor-pointer duration-200">
+            className={liStyles}>
             personal rating
           </li>
           <li
             onClick={() => handleMenuItemClick("/about")}
-            className="text-beige font-redhatmono text-lg hover:text-yellow cursor-pointer duration-200">
+            className={liStyles}>
             about us
           </li>
         </ul>
@@ -37,17 +40,17 @@ export default function DropdownMenu({
         <ul className="flex flex-col items-center gap-4 mt-4">
           <li
             onClick={() => window.open("https://instagram.com", "_blank")}
-            className="text-beige font-redhatmono text-lg hover:text-yellow cursor-pointer duration-200">
+            className={liStyles}>
             instagram
           </li>
           <li
             onClick={() => window.open("https://facebook.com", "_blank")}
-            className="text-beige font-redhatmono text-lg hover:text-yellow cursor-pointer duration-200">
+            className={liStyles}>
             facebook
           </li>
           <li
             onClick={() => window.open("mailto:contact@turfinder.com")}
-            className="text-beige font-redhatmono text-lg hover:text-yellow cursor-pointer duration-200">
+            className={liStyles}>
             mail
           </li>
         </ul>

@@ -174,13 +174,13 @@ export default function NavBar() {
               />
             </button>
             <button
+              onClick={handleProfileClick}
               className="flex bg-almostblack items-center justify-center cursor-pointer
                          h-8 sm:h-10 lg:h-12
                          w-8 sm:w-10 lg:w-12
                          rounded-lg sm:rounded-xl lg:rounded-2xl
                          hover:bg-green active:bg-green/55 transition-all duration-200">
               <img
-                onClick={handleProfileClick}
                 src={profile}
                 alt="profile"
                 className="h-5.5 sm:h-6.5 lg:h-7.5"
