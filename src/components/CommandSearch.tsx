@@ -1,30 +1,32 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, FormEvent } from "react";
 
 export default function CommandSearch() {
-  const [open, setOpen] = useState(false);
-  const [query, setQuery] = useState("");
-  const [recent, setRecent] = useState([
+  const [open, setOpen] = useState<boolean>(false);
+  const [query, setQuery] = useState<string>("");
+  const [recent, setRecent] = useState<string[]>([
     "looking for a keeper",
     "book a turf",
     "looking for group",
   ]);
 
-  const inputRef = useRef(null);
-  const screenRef = useRef(window.matchMedia("(min-width:1024px)"));
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const screenRef = useRef<MediaQueryList>(
+    window.matchMedia("(min-width:1024px)")
+  );
 
-  const isDesktop = () => screenRef.current.matches;
-  const toggle = () => setOpen((v) => (isDesktop() ? !v : false));
+  const isDesktop = (): boolean => screenRef.current.matches;
+  const toggle = (): void => setOpen((v) => (isDesktop() ? !v : false));
 
-  const isMacOS = () => /Mac/i.test(navigator.userAgent);
+  const isMacOS = (): boolean => /Mac/i.test(navigator.userAgent);
 
   useEffect(() => {
-    const handleKey = (e) => {
+    const handleKey = (keyPress: KeyboardEvent): void => {
       if (!isDesktop()) return;
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
-        e.preventDefault();
+      if ((keyPress.metaKey || keyPress.ctrlKey) && keyPress.key === "k") {
+        keyPress.preventDefault();
         toggle();
       }
-      if (e.key === "Escape") setOpen(false);
+      if (keyPress.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
@@ -34,7 +36,7 @@ export default function CommandSearch() {
     if (open && inputRef.current) inputRef.current.focus();
   }, [open]);
 
-  const submitQuery = (e) => {
+  const submitQuery = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (!query.trim()) return;
     setRecent((p) =>
@@ -99,7 +101,7 @@ export default function CommandSearch() {
               />
               <span
                 onClick={toggle}
-                className="text-sm text-almostwhite/45 cursor-pointer">
+                className="text-sm text-almostwhite/45 hover:text-yellow cursor-pointer">
                 Esc
               </span>
             </form>

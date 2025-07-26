@@ -1,8 +1,14 @@
+interface DropdownMenuProps {
+  isMenuOpen: boolean;
+  toggleMenu: () => void;
+  handleMenuItemClick: (path: string) => void;
+}
+
 export default function DropdownMenu({
   isMenuOpen,
   toggleMenu,
   handleMenuItemClick,
-}) {
+}: DropdownMenuProps) {
   const liStyles =
     "text-beige font-redhatmono text-lg hover:text-yellow cursor-pointer duration-200";
 
