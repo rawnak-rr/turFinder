@@ -4,7 +4,7 @@ import LandingPage from "./pages/landing";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div className="flex flex-col overflow-hidden bg-almostwhite">
       <section>
         <LandingPage />
       </section>

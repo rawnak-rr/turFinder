@@ -37,7 +37,7 @@ export default function FactsPage() {
               ease: "power2.inOut",
               scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top 20%",
+                start: "top 60%",
                 toggleActions: "play reverse play reverse",
               },
             }
@@ -52,7 +52,7 @@ export default function FactsPage() {
               ease: "power2.inOut",
               scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top 20%",
+                start: "top 60%",
                 toggleActions: "play reverse play reverse",
               },
             }
@@ -67,7 +67,7 @@ export default function FactsPage() {
               ease: "power2.inOut",
               scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top 20%",
+                start: "top 60%",
                 toggleActions: "play reverse play reverse",
               },
             }
@@ -82,7 +82,7 @@ export default function FactsPage() {
               ease: "power2.inOut",
               scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top 20%",
+                start: "top 60%",
                 toggleActions: "play reverse play reverse",
               },
             }
@@ -109,7 +109,7 @@ export default function FactsPage() {
               ease: "power2.inOut",
               scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top 20%",
+                start: "top 60%",
                 toggleActions: "play reverse play reverse",
               },
             }
@@ -132,7 +132,7 @@ export default function FactsPage() {
               ease: "power2.inOut",
               scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top 20%",
+                start: "top 60%",
                 toggleActions: "play reverse play reverse",
               },
             }
@@ -155,7 +155,7 @@ export default function FactsPage() {
               ease: "power2.inOut",
               scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top 20%",
+                start: "top 60%",
                 toggleActions: "play reverse play reverse",
               },
             }
@@ -178,7 +178,7 @@ export default function FactsPage() {
               ease: "power2.inOut",
               scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top 20%",
+                start: "top 60%",
                 toggleActions: "play reverse play reverse",
               },
             }
