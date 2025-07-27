@@ -148,10 +148,10 @@ export default function Calendar({
   );
 
   const formatMonth = useCallback((date: Date) => {
-    return date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+    return date.toLocaleDateString("en-US", { month: "long" });
   }, []);
 
-  const weekDays = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+  const weekDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
   // Get bookings for display (memoized)
   const displayDate = hoveredDate || selectedDate;
@@ -176,18 +176,18 @@ export default function Calendar({
         <div className="flex items-center justify-between px-6 py-4 bg-black border-b border-gray-800">
           <div className="flex items-center gap-4">
             <button
-              className="w-8 h-8 flex items-center justify-center bg-gray-800 hover:bg-gray-700 rounded-md transition-colors duration-150 text-white text-lg"
+              className="w-8 h-8 flex items-center justify-center text-white text-lg"
               onClick={() => navigateMonth("prev")}
               aria-label="Previous month">
               ‹
             </button>
 
-            <h2 className="text-xl font-redhatmono font-bold text-white">
+            <h2 className="text-xl font-unbounded font-bold text-white">
               {formatMonth(currentDate)}
             </h2>
 
             <button
-              className="w-8 h-8 flex items-center justify-center bg-gray-800 hover:bg-gray-700 rounded-md transition-colors duration-150 text-white text-lg"
+              className="w-8 h-8 flex items-center justify-center  text-white text-lg"
               onClick={() => navigateMonth("next")}
               aria-label="Next month">
               ›
@@ -196,18 +196,18 @@ export default function Calendar({
 
           <button
             onClick={onClose}
-            className="w-8 h-8 flex items-center justify-center bg-gray-800 hover:bg-gray-700 rounded-md transition-colors duration-150 text-white text-lg"
+            className="w-8 h-8 flex items-center justify-center text-white text-lg"
             aria-label="Close calendar">
             ×
           </button>
         </div>
 
         {/* Compact Week Header */}
-        <div className="grid grid-cols-7 bg-black border-b border-gray-800">
+        <div className="grid grid-cols-7 bg-yellow border-b border-gray-800">
           {weekDays.map((day) => (
             <div
               key={day}
-              className="px-2 py-2 text-center font-redhatmono font-medium text-xs text-gray-400 uppercase tracking-wider">
+              className="px-2 py-2 text-center font-redhatmono font-medium text-xs text-black uppercase tracking-wider">
               {day}
             </div>
           ))}
@@ -217,20 +217,19 @@ export default function Calendar({
         <div className="flex-1 flex flex-col min-h-0">
           {/* Compact Calendar Grid - Small Boxes */}
           <div className="flex-1 overflow-auto">
-            <div className="grid grid-cols-7 gap-px bg-gray-800 h-full">
+            <div className="grid grid-cols-7 gap-0.5 bg-almostblack h-full">
               {calendarDays.map((day, index) => (
                 <div
                   key={`${day.date.getTime()}-${index}`}
                   className={`
-                    bg-black min-h-[60px] max-h-[70px] p-2 cursor-pointer relative flex flex-col items-center justify-start
-                    transition-all duration-150 border border-gray-800
-                    hover:bg-gray-900 hover:border-gray-600 rounded-2xl
+                    bg-black min-h-[70px] max-h-[70px] cursor-pointer relative flex flex-col items-center justify-start
+                    rounded-2xl transition-all transform duration-50
                     ${
                       !day.isCurrentMonth
-                        ? "bg-gray-900 text-gray-600"
+                        ? "bg-gray-800 text-gray-600"
                         : "text-white"
                     }
-                    ${day.isToday ? "bg-gray-800 border-white" : ""}
+                    ${day.isToday ? "bg-gray-800" : ""}
                     ${
                       hoveredDate?.toDateString() === day.date.toDateString()
                         ? "bg-gray-800 border-gray-600"
@@ -238,7 +237,12 @@ export default function Calendar({
                     }
                     ${
                       selectedDate?.toDateString() === day.date.toDateString()
-                        ? "bg-gray-700 border-gray-500"
+                        ? "bg-yellow border-gray-500"
+                        : !(
+                            hoveredDate?.toDateString() ==
+                            day.date.toDateString()
+                          )
+                        ? "hover:bg-darkgreen"
                         : ""
                     }
                   `}
@@ -259,7 +263,7 @@ export default function Calendar({
 
                   {day.hasBookings && (
                     <div className="flex gap-1 flex-wrap">
-                      {day.bookings.slice(0, 2).map((booking, idx) => (
+                      {day.bookings?.slice(0, 2).map((booking, idx) => (
                         <div
                           key={`${booking.id}-${idx}`}
                           className={`
@@ -269,7 +273,7 @@ export default function Calendar({
                           `}
                         />
                       ))}
-                      {day.bookings.length > 2 && (
+                      {(day.bookings?.length ?? 0) > 2 && (
                         <div className="w-1.5 h-1.5 rounded-full bg-gray-400" />
                       )}
                     </div>
@@ -280,11 +284,11 @@ export default function Calendar({
           </div>
 
           {/* Compact Bottom Panel */}
-          <div className="bg-gray-900 border-t border-gray-800 p-4 h-[160px] overflow-hidden">
+          <div className="bg-black border-t border-gray-800 p-4 h-[160px] overflow-hidden">
             {displayDate ? (
               <>
                 <div className="mb-3">
-                  <h3 className="text-lg font-polysans font-medium text-white mb-1">
+                  <h3 className="text-lg font-unbounded font-medium text-white mb-1">
                     {displayDate.toLocaleDateString("en-US", {
                       weekday: "short",
                       month: "short",

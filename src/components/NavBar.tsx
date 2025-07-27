@@ -41,46 +41,12 @@ export default function NavBar() {
     // Handle date selection logic here
   };
   const sampleBookings = {
-    "2025-07-25": [
-      {
-        id: "1",
-        title: "Team Meeting",
-        time: "9:00 AM",
-        type: "meeting" as const,
-      },
-      {
-        id: "2",
-        title: "Doctor Appointment",
-        time: "2:00 PM",
-        type: "appointment" as const,
-      },
-    ],
-    "2025-07-27": [
-      {
-        id: "3",
-        title: "Birthday Party",
-        time: "6:00 PM",
-        type: "event" as const,
-      },
-    ],
     "2025-07-30": [
       {
-        id: "4",
-        title: "Project Review",
-        time: "10:00 AM",
-        type: "meeting" as const,
-      },
-      {
-        id: "5",
-        title: "Lunch Meeting",
-        time: "12:30 PM",
-        type: "meeting" as const,
-      },
-      {
-        id: "6",
-        title: "Gym Session",
-        time: "5:00 PM",
-        type: "event" as const,
+        id: "1",
+        title: "North Arena",
+        time: "9:00 - 9:30 AM",
+        type: "slot" as const,
       },
     ],
   };
