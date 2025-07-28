@@ -229,7 +229,7 @@ export default function Calendar({
                         ? "bg-gray-800 text-gray-600"
                         : "text-white"
                     }
-                    ${day.isToday ? "bg-gray-800" : ""}
+                    
                     ${
                       hoveredDate?.toDateString() === day.date.toDateString()
                         ? "bg-gray-800 border-gray-600"
@@ -251,10 +251,10 @@ export default function Calendar({
                   onClick={() => handleDateClick(day)}>
                   <span
                     className={`
-                    text-sm font-polysans font-medium mb-1
+                    text-sm font-unbounded font-medium mb-1
                     ${
                       day.isToday
-                        ? "bg-white text-black w-6 h-6 rounded-full flex items-center justify-center text-xs"
+                        ? "bg-yellow text-black w-6 h-6 rounded-full flex items-center justify-center text-xs"
                         : ""
                     }
                   `}>
@@ -333,7 +333,6 @@ export default function Calendar({
                 ) : (
                   <div className="text-center py-4">
                     <div className="text-gray-600 text-sm">No bookings</div>
-                    <div className="text-gray-500 text-xs">Free day</div>
                   </div>
                 )}
               </>
