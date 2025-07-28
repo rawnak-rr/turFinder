@@ -11,6 +11,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import CommandSearch from "./CommandSearch";
+import Calendar from "./navcomponents/Calendar";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -20,6 +21,35 @@ export default function NavBar() {
   const [isProfileOpen, setIsProfileOpen] = useState<boolean>(false);
   const navbarRef = useRef<HTMLDivElement | null>(null);
   const logoRef = useRef<HTMLImageElement | null>(null);
+  const [isCalendarOpen, setIsCalendarOpen] = useState<boolean>(false);
+
+  const handleCalendarClick = (): void => {
+    setIsCalendarOpen(!isCalendarOpen);
+    // Close other menus
+    if (isMenuOpen) setIsMenuOpen(false);
+    if (isProfileOpen) setIsProfileOpen(false);
+  };
+
+  // Add this function
+  const handleCalendarClose = (): void => {
+    setIsCalendarOpen(false);
+  };
+
+  // Add this function
+  const handleDateSelect = (date: Date): void => {
+    console.log("Selected date:", date);
+    // Handle date selection logic here
+  };
+  const sampleBookings = {
+    "2025-07-30": [
+      {
+        id: "1",
+        title: "North Arena",
+        time: "9:00 - 9:30 AM",
+        type: "slot" as const,
+      },
+    ],
+  };
 
   // use this to toggle open/close menu
   const toggleMenu = (): void => {
@@ -120,6 +150,14 @@ export default function NavBar() {
         toggleProfile={toggleProfile}
         handleLogin={handleLogin}
       />
+
+      <Calendar
+        isOpen={isCalendarOpen}
+        onClose={handleCalendarClose}
+        onDateSelect={handleDateSelect}
+        bookings={sampleBookings}
+      />
+
       <CommandSearch />
       {/* navbar code */}
       <div
@@ -156,6 +194,7 @@ export default function NavBar() {
               />
             </button>
             <button
+              onClick={handleCalendarClick}
               className="flex bg-almostblack items-center justify-center cursor-pointer
                          h-8 sm:h-10 lg:h-12
                          w-8 sm:w-10 lg:w-12
