@@ -38,7 +38,7 @@ export default function FinderPage() {
               scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 60%",
-                toggleActions: "play reverse play reverse",
+                toggleActions: "play none none none",
               },
             }
           );
@@ -54,7 +54,7 @@ export default function FinderPage() {
               scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 60%",
-                toggleActions: "play reverse play reverse",
+                toggleActions: "play none none none",
               },
             }
           );
@@ -73,7 +73,7 @@ export default function FinderPage() {
               scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 60%",
-                toggleActions: "play reverse play reverse",
+                toggleActions: "play none none none",
               },
             }
           );
@@ -88,7 +88,7 @@ export default function FinderPage() {
               scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 60%",
-                toggleActions: "play reverse play reverse",
+                toggleActions: "play none none none",
               },
             }
           );
@@ -106,7 +106,7 @@ export default function FinderPage() {
                  lg:flex-row lg:gap-0">
       <div
         ref={leftCardRef}
-        className="relative bg-black rounded-xl mr-20 -rotate-7
+        className="relative bg-black rounded-xl mr-20 -rotate-7 drop-shadow-xl drop-shadow-almostblack/70
                    flex items-center justify-center overflow-hidden cursor-pointer
                    w-47 sm:w-57 lg:w-87
                    h-55 sm:h-65 lg:h-95
@@ -126,7 +126,7 @@ export default function FinderPage() {
       </div>
       <div
         ref={rightCardRef}
-        className="relative bg-black rounded-xl ml-20 rotate-7
+        className="relative bg-black rounded-xl ml-20 rotate-7 drop-shadow-xl drop-shadow-almostblack/70
                    flex items-center justify-center overflow-hidden cursor-pointer
                    w-47 sm:w-57 lg:w-87
                    h-55 sm:h-65 lg:h-95">

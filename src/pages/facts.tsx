@@ -38,7 +38,7 @@ export default function FactsPage() {
               scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 60%",
-                toggleActions: "play reverse play reverse",
+                toggleActions: "play none none none",
               },
             }
           );
@@ -53,7 +53,7 @@ export default function FactsPage() {
               scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 60%",
-                toggleActions: "play reverse play reverse",
+                toggleActions: "play none none none",
               },
             }
           );
@@ -68,7 +68,7 @@ export default function FactsPage() {
               scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 60%",
-                toggleActions: "play reverse play reverse",
+                toggleActions: "play none none none",
               },
             }
           );
@@ -83,7 +83,7 @@ export default function FactsPage() {
               scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 60%",
-                toggleActions: "play reverse play reverse",
+                toggleActions: "play none none none",
               },
             }
           );
@@ -110,7 +110,7 @@ export default function FactsPage() {
               scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 60%",
-                toggleActions: "play reverse play reverse",
+                toggleActions: "play none none none",
               },
             }
           );
@@ -133,7 +133,7 @@ export default function FactsPage() {
               scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 60%",
-                toggleActions: "play reverse play reverse",
+                toggleActions: "play none none none",
               },
             }
           );
@@ -156,7 +156,7 @@ export default function FactsPage() {
               scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 60%",
-                toggleActions: "play reverse play reverse",
+                toggleActions: "play none none none",
               },
             }
           );
@@ -179,7 +179,7 @@ export default function FactsPage() {
               scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 60%",
-                toggleActions: "play reverse play reverse",
+                toggleActions: "play none none none",
               },
             }
           );
@@ -245,7 +245,7 @@ export default function FactsPage() {
         <div
           ref={thirdCardRef}
           className="bg-darkgreen w-56 h-51 rounded-3xl flex flex-col justify-between -mb-20 p-6 rotate-13
-                       font-unbounded font-black text-4xl text-beige
+                       font-unbounded font-black text-4xl text-almostwhite
                        lg:relative lg:z-28">
           <div className="flex flex-col">
             <span>500+</span>
@@ -258,7 +258,7 @@ export default function FactsPage() {
         <div
           ref={fourthCardRef}
           className="bg-almostblack w-56 h-51 rounded-3xl flex flex-col justify-between p-6 -rotate-4
-                       font-unbounded font-black text-4xl text-beige
+                       font-unbounded font-black text-4xl text-almostwhite
                        lg:relative lg:z-27">
           <div className="flex flex-col">
             <span>100%</span>
