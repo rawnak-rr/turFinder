@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&family=Unbounded:wght@200..900&display=swap");
+@import url("https://use.typekit.net/sgj5clj.css");
 @import "tailwindcss";
 
 @font-face {
@@ -22,6 +23,7 @@
   --font-polysans: "PolySans", sans-serif;
   --font-unbounded: "Unbounded", sans-serif;
   --font-redhatmono: "Red Hat Mono", monospace;
+  --font-degular: "Degular", sans-serif;
 
   /* Colors */
   --color-almostwhite: #fbf9ed;

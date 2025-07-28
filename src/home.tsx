@@ -1,3 +1,4 @@
+import EndPage from "./pages/end";
 import FactsPage from "./pages/facts";
 import FinderPage from "./pages/finder";
 import LandingPage from "./pages/landing";
@@ -8,11 +9,14 @@ export default function HomePage() {
       <section>
         <LandingPage />
       </section>
-      <section>
+      <section className="bg-green">
         <FinderPage />
       </section>
-      <section>
+      <section className="bg-beige">
         <FactsPage />
+      </section>
+      <section>
+        <EndPage />
       </section>
     </div>
   );

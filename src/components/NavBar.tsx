@@ -124,7 +124,7 @@ export default function NavBar() {
       {/* navbar code */}
       <div
         ref={navbarRef}
-        className="flex justify-center fixed top-0 left-0 w-full z-30">
+        className="flex justify-center fixed top-0 left-0 w-full z-30 drop-shadow-md drop-shadow-almostblack/25">
         <div
           className="flex bg-almostblack
                      h-15 sm:h-17.5 lg:h-18
