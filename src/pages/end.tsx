@@ -1,11 +1,12 @@
 import logo from "../assets/turfinderlogo.png";
+import outarrow from "../assets/arrow-outward.svg";
 
 export default function EndPage() {
   return (
     <div className="w-screen h-screen flex flex-col bg-almostwhite">
       <div
         className="flex-grow flex flex-col justify-center items-center pt-15
-                   font-degular font-extrabold text-7xl">
+                   font-degular font-black text-9xl">
         <span>LAUNCHING</span>
         <span>FALL 2025!</span>
       </div>
@@ -37,6 +38,46 @@ export default function EndPage() {
                          cursor-pointer hover:bg-yellow/90 active:bg-yellow/70">
               submit
             </button>
+          </div>
+        </div>
+        <div
+          className="flex flex-col absolute left-20 gap-2 pt-10 cursor-pointer
+                     font-polysans font-bold text-3xl text-lightgreen">
+          <span className="flex flex-row gap-1 group hover:scale-110 active:opacity-60 duration-200">
+            Home
+          </span>
+          <span className="flex flex-row gap-1 group hover:scale-110 active:opacity-60 duration-200">
+            Instagram
+            <img
+              src={outarrow}
+              className="w-8 -mb-1 group-hover:rotate-45 duration-200"
+            />
+          </span>
+          <span className="flex flex-row gap-1 group hover:scale-110 active:opacity-60 duration-200">
+            Facebook
+            <img
+              src={outarrow}
+              className="w-8 -mb-1 group-hover:rotate-45 duration-200"
+            />
+          </span>
+          <span className="flex flex-row gap-1 group hover:scale-110 active:opacity-60 duration-200">
+            Contact Us
+          </span>
+        </div>
+        <div
+          className="flex flex-col absolute right-20 gap-10 pt-10 cursor-pointer
+                     font-redhatmono font-normal text-2xl text-left text-black">
+          <div className="flex flex-col">
+            <span>Rawnak</span>
+            <span>UNSW, Sydney</span>
+          </div>
+          <div className="flex flex-col">
+            <span>Maheer</span>
+            <span>ASU, Tempe</span>
+          </div>
+          <div className="flex flex-col">
+            <span>Masroor</span>
+            <span>BUET, Dhaka</span>
           </div>
         </div>
       </div>
