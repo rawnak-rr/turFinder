@@ -167,7 +167,7 @@ export default function Calendar({
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 bg-black/60 backdrop-blur-sm items-center justify-center z-50 hidden"
+      className="fixed inset-0 bg-black/50 items-center justify-center z-50 hidden"
       onClick={handleOverlayClick}>
       <div
         ref={cardRef}

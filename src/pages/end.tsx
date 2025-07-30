@@ -1,5 +1,5 @@
 import logo from "../assets/turfinderlogo.png";
-import outarrow from "../assets/arrow-outward.svg";
+import outarrow from "../assets/icons/arrow-outward.svg";
 
 export default function EndPage() {
   return (
@@ -23,7 +23,7 @@ export default function EndPage() {
           </span>
         </div>
         <div
-          className="flex flex-col mt-10 items-center
+          className="flex flex-col mt-10 mb-5 items-center
                      font-redhatmono text-sm text-white">
           <span>sign up for EARLY ACCESS!</span>
           <div>
@@ -65,8 +65,8 @@ export default function EndPage() {
           </span>
         </div>
         <div
-          className="flex flex-col absolute right-20 gap-10 pt-10 cursor-pointer
-                     font-redhatmono font-normal text-2xl text-left text-black">
+          className="flex flex-col absolute right-20 pt-5 gap-5 cursor-pointer
+                     font-unbounded font-normal text-xl text-left text-black">
           <div className="flex flex-col">
             <span>Rawnak</span>
             <span>UNSW, Sydney</span>
