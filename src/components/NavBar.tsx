@@ -81,10 +81,7 @@ export default function NavBar() {
   const handleLogin = (): void => {};
 
   const handleMenuItemClick = (path: string): void => {
-    // for now, just console.log since pages don't exist yet
-    console.log(`Navigating to: ${path}`);
-    // navigate(path); // Uncomment when you create these pages
-
+    navigate(path);
     setIsMenuOpen(false); // Close menu
   };
   useGSAP(() => {

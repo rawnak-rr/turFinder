@@ -72,11 +72,11 @@ export default function CommandSearch() {
         <>
           <div
             onClick={toggle}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-30"
+            className="fixed inset-0 bg-black/50 z-30"
           />
           <div
             className="fixed flex flex-col top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 max-w-lg p-6 z-40 gap-6
-                     bg-almostblack/90 backdrop-blur-md rounded-2xl">
+                     bg-almostblack/90 rounded-2xl">
             <form
               onSubmit={submitQuery}
               className="flex items-center gap-3">

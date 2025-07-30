@@ -22,7 +22,7 @@ export default function DropdownMenu({
                     ${isMenuOpen ? "translate-y-0" : "-translate-y-full"}`}>
         <ul className="flex flex-col items-center gap-4">
           <li
-            onClick={() => handleMenuItemClick("/book")}
+            onClick={() => handleMenuItemClick("/turfind")}
             className={liStyles}>
             book your turf
           </li>
@@ -70,7 +70,7 @@ export default function DropdownMenu({
 
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300"
+          className="fixed inset-0 bg-black/50 z-40 transition-opacity duration-300"
           onClick={toggleMenu}
         />
       )}
