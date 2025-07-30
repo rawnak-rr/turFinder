@@ -3,7 +3,7 @@ import outarrow from "../assets/arrow-outward.svg";
 
 export default function EndPage() {
   return (
-    <div className="w-screen h-screen flex flex-col bg-almostwhite">
+    <div className="w-full min-h-screen flex flex-col bg-almostwhite">
       <div
         className="flex-grow flex flex-col justify-center items-center pt-15
                    font-degular font-black text-9xl">
@@ -11,7 +11,7 @@ export default function EndPage() {
         <span>FALL 2025!</span>
       </div>
       <div
-        className="bg-darkgreen w-screen h-1/2 rounded-t-[120px]
+        className="bg-darkgreen w-full h-1/2 rounded-t-[120px]
                    flex flex-col justify-evenly items-center">
         <div className="flex items-center bg-almostblack w-105 h-30 rounded-xl">
           <img

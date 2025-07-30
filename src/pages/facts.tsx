@@ -19,7 +19,7 @@ export default function FactsPage() {
 
     mm.add(
       {
-        // Mobile: max-width 1023px (Tailwind's lg breakpoint)
+        // Mobile: max-width 1023px (Tailwind's md breakpoint)
         isMobile: "(max-width: 1023px)",
         // Desktop: min-width 1024px
         isDesktop: "(min-width: 1024px)",
@@ -193,7 +193,7 @@ export default function FactsPage() {
   return (
     <div
       ref={containerRef}
-      className="flex flex-col relative items-center justify-center w-screen h-screen">
+      className="flex flex-col relative items-center justify-center w-full min-h-screen">
       <div className="flex flex-col  items-center text-center">
         <img
           src={pitch}
@@ -220,7 +220,7 @@ export default function FactsPage() {
           ref={firstCardRef}
           className="bg-yellow w-56 h-51 rounded-3xl flex flex-col justify-between -mb-20 p-6 -rotate-10
                        font-unbounded font-black text-4xl
-                       lg:relative lg:z-30">
+                       md:relative md:z-30">
           <div className="flex flex-col">
             <span>20+</span>
             <span>Fields</span>
@@ -233,7 +233,7 @@ export default function FactsPage() {
           ref={secondCardRef}
           className="bg-lightgreen w-56 h-51 rounded-3xl flex flex-col justify-between -mb-24 p-6 rotate-6
                        font-unbounded font-black text-4xl
-                       lg:relative lg:z-29">
+                       md:relative md:z-29">
           <div className="flex flex-col">
             <span>Under</span>
             <span>2 Mins</span>
@@ -246,7 +246,7 @@ export default function FactsPage() {
           ref={thirdCardRef}
           className="bg-darkgreen w-56 h-51 rounded-3xl flex flex-col justify-between -mb-20 p-6 rotate-13
                        font-unbounded font-black text-4xl text-almostwhite
-                       lg:relative lg:z-28">
+                       md:relative md:z-28">
           <div className="flex flex-col">
             <span>500+</span>
             <span>Players</span>
@@ -259,7 +259,7 @@ export default function FactsPage() {
           ref={fourthCardRef}
           className="bg-almostblack w-56 h-51 rounded-3xl flex flex-col justify-between p-6 -rotate-4
                        font-unbounded font-black text-4xl text-almostwhite
-                       lg:relative lg:z-27">
+                       md:relative md:z-27">
           <div className="flex flex-col">
             <span>100%</span>
             <span>Verified</span>

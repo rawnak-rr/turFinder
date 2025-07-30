@@ -102,15 +102,15 @@ export default function FinderPage() {
   return (
     <div
       ref={containerRef}
-      className="flex flex-col items-center justify-center w-screen h-screen gap-10
+      className="flex flex-col items-center justify-center w-full min-h-screen gap-10
                  lg:flex-row lg:gap-0">
       <div
         ref={leftCardRef}
         className="relative bg-black rounded-xl mr-20 -rotate-7 drop-shadow-xl drop-shadow-almostblack/70
                    flex items-center justify-center overflow-hidden cursor-pointer
-                   w-47 sm:w-57 lg:w-87
-                   h-55 sm:h-65 lg:h-95
-                   lg:mr-0 lg:mb-10">
+                   w-47 sm:w-57 md:w-87
+                   h-55 sm:h-65 md:h-95
+                   md:mr-0 md:mb-10">
         <img
           src={turFind}
           alt="turFind"
@@ -119,7 +119,7 @@ export default function FinderPage() {
         <div
           className="absolute inset-0 flex flex-col justify-end items-center pb-5
                      font-polysans text-beige
-                     text-5xl sm:text-6xl lg:text-8xl">
+                     text-5xl sm:text-6xl md:text-8xl">
           <span>tur-</span>
           <span>Find</span>
         </div>
@@ -128,8 +128,8 @@ export default function FinderPage() {
         ref={rightCardRef}
         className="relative bg-black rounded-xl ml-20 rotate-7 drop-shadow-xl drop-shadow-almostblack/70
                    flex items-center justify-center overflow-hidden cursor-pointer
-                   w-47 sm:w-57 lg:w-87
-                   h-55 sm:h-65 lg:h-95">
+                   w-47 sm:w-57 md:w-87
+                   h-55 sm:h-65 md:h-95">
         <img
           src={gameFind}
           alt="gameFind"
@@ -138,7 +138,7 @@ export default function FinderPage() {
         <div
           className="absolute inset-0 flex flex-col justify-end items-center pb-5
                      font-polysans text-beige
-                     text-5xl sm:text-6xl lg:text-8xl">
+                     text-5xl sm:text-6xl md:text-8xl">
           <span>game-</span>
           <span>Find</span>
         </div>
