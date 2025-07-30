@@ -9,7 +9,7 @@ export default function HomePage() {
       <section>
         <LandingPage />
       </section>
-      <section className="bg-green">
+      <section className="bg-brred">
         <FinderPage />
       </section>
       <section className="bg-beige">

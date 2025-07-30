@@ -87,39 +87,6 @@ export default function NavBar() {
 
     setIsMenuOpen(false); // Close menu
   };
-  useGSAP(() => {
-    const mm = gsap.matchMedia();
-
-    mm.add(
-      {
-        isMobile: "(max-width: 1023px)",
-        isDesktop: "(min-width: 1024px)",
-      },
-      (context) => {
-        if (context.conditions?.isMobile) {
-          gsap.fromTo(
-            navbarRef.current,
-            { y: "6vh", opacity: 1 },
-            {
-              y: "86vh",
-              opacity: 1,
-              duration: 1,
-              ease: "power2.inOut",
-              scrollTrigger: {
-                trigger: navbarRef.current,
-                start: "top 40%",
-                toggleActions: "reverse play reverse play",
-              },
-            }
-          );
-        } else {
-          gsap.set(navbarRef.current, { clearProps: "transform" });
-        }
-      }
-    );
-
-    return () => mm.revert(); // clean‑up on resize/unmount
-  }, []);
 
   useEffect(() => {
     const spin = () => {
@@ -162,12 +129,12 @@ export default function NavBar() {
       {/* navbar code */}
       <div
         ref={navbarRef}
-        className="flex justify-center fixed top-0 left-0 w-full z-30 drop-shadow-md drop-shadow-almostblack/25">
+        className="fixed bottom-10 md:top-0 left-1/2 transform -translate-x-1/2 drop-shadow-md z-20">
         <div
           className="flex bg-almostblack
-                     h-15 sm:h-17.5 lg:h-18
-                     w-61 sm:w-71 lg:w-81
-                     rounded-3xl lg:rounded-t-none lg:rounded-b-3xl">
+                     h-15 sm:h-17.5 md:h-18
+                     w-61 sm:w-71 md:w-81
+                     rounded-3xl md:rounded-t-none md:rounded-b-3xl">
           <img
             ref={logoRef}
             onClick={handleLogoClick}
@@ -177,46 +144,46 @@ export default function NavBar() {
           />
           <div
             className="flex font-polysans bg-darkgreen h-100% justify-evenly items-center
-                       w-45 sm:w-55 lg:w-65
-                       rounded-3xl lg:rounded-t-none lg:rounded-b-3xl">
+                       w-45 sm:w-55 md:w-65
+                       rounded-3xl md:rounded-t-none md:rounded-b-3xl">
             <button
               onClick={toggleMenu}
               className="flex items-center justify-center rounded-2xl bg-almostblack cursor-pointer
-                         font-polysans text-beige text-xs sm:text-sm lg:text-base
-                         h-8 sm:h-10 lg:h-12
-                         w-19 sm:w-21 lg:w-23
+                         font-polysans text-beige text-xs sm:text-sm md:text-base
+                         h-8 sm:h-10 md:h-12
+                         w-19 sm:w-21 md:w-23
                          hover:bg-green active:bg-green/55 transition-all duration-200">
               Menu
               <img
                 src={menu}
                 alt="menu"
-                className="h-4 sm:h-5 lg:h-6 ml-1 mb-[1px]"
+                className="h-4 sm:h-5 md:h-6 ml-1 mb-[1px]"
               />
             </button>
             <button
               onClick={handleCalendarClick}
               className="flex bg-almostblack items-center justify-center cursor-pointer
-                         h-8 sm:h-10 lg:h-12
-                         w-8 sm:w-10 lg:w-12
-                         rounded-lg sm:rounded-xl lg:rounded-2xl
+                         h-8 sm:h-10 md:h-12
+                         w-8 sm:w-10 md:w-12
+                         rounded-md sm:rounded-xl md:rounded-2xl
                          hover:bg-green active:bg-green/55 transition-all duration-200">
               <img
                 src={cal}
                 alt="calendar"
-                className="h-5 sm:h-6 lg:h-7"
+                className="h-5 sm:h-6 md:h-7"
               />
             </button>
             <button
               onClick={handleProfileClick}
               className="flex bg-almostblack items-center justify-center cursor-pointer
-                         h-8 sm:h-10 lg:h-12
-                         w-8 sm:w-10 lg:w-12
-                         rounded-lg sm:rounded-xl lg:rounded-2xl
+                         h-8 sm:h-10 md:h-12
+                         w-8 sm:w-10 md:w-12
+                         rounded-md sm:rounded-xl md:rounded-2xl
                          hover:bg-green active:bg-green/55 transition-all duration-200">
               <img
                 src={profile}
                 alt="profile"
-                className="h-5.5 sm:h-6.5 lg:h-7.5"
+                className="h-5.5 sm:h-6.5 md:h-7.5"
               />
             </button>
           </div>
